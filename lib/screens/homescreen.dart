@@ -14,7 +14,6 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // Wavy Orange Background
           ClipPath(
             clipper: OrangeWaveClipper(),
             child: Container(
@@ -22,14 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: BoxDecoration(color: Colors.orange.shade400),
             ),
           ),
-
-          // Two Background Circles
           Positioned(
-            top: 80,
-            left: 40,
+            top: 70,
+            left: -50,
             child: Container(
-              width: 100,
-              height: 100,
+              width: 180,
+              height: 180,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white.withOpacity(0.1),
@@ -37,11 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Positioned(
-            top: 130,
-            right: 30,
+            top: 100,
+            right: -80,
             child: Container(
-              width: 80,
-              height: 80,
+              width: 180,
+              height: 180,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white.withOpacity(0.1),
@@ -56,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Top Bar
                     Row(
                       children: [
                         Icon(Icons.navigate_before, color: Colors.white),
@@ -67,8 +63,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     SizedBox(height: 20),
-
-                    // Language Title
                     Text(
                       "Spanish",
                       style: TextStyle(
@@ -78,12 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(height: 10),
-
-                    // Dropdown & Progress Indicator
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Level Selector
                         Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -122,8 +113,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-
-                        // Progress Circle
                         Column(
                           children: [
                             Stack(
@@ -148,8 +137,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     SizedBox(height: 15),
-
-                    // Milestones
                     Row(
                       children: [
                         Icon(Icons.diamond, color: Colors.red, size: 30),
@@ -161,8 +148,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-
-              // Course Categories Grid
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
@@ -187,8 +172,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
-  // Function to Build Category Cards
   Widget _buildCategoryCard(String title, IconData icon, int progress, int total, Color color) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -215,8 +198,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-// Custom Clipper for Wavy Background
 class OrangeWaveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
